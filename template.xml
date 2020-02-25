@@ -1,0 +1,47 @@
+<template format="4"
+        revision="1"
+        name="Kotlin MVVM Feature"
+        description="Creates a new feature based on MVVM architecture">
+
+    <category value="MVVM Feature"/>
+
+    <parameter id="featureName"
+        name="Feature Name"
+        type="string"
+        default="MitosisFeature"
+        help="The name of the feature"/>
+
+    <parameter id="includeActivity"
+        name="Add Activity"
+        type="boolean"
+        default="true"
+        help="If true, the feature will include an activity"/>
+
+    <parameter id="includeFragment"
+        name="Add Fragment"
+        type="boolean"
+        default="true"
+        help="If true, the feature will include a fragment"/>
+
+    <parameter id="includeArq"
+        name="View Model"
+        type="boolean"
+        default="true"
+        help="If true, the feature will include a view model class"/>
+
+    <parameter id="includeRepository"
+        name="Add Respository"
+        type="boolean"
+        default="true"
+        help="If true, the feature will include a respository"/>
+
+    <parameter id="addImports"
+        name="Add imports in Gradle"
+        type="boolean"
+        default="true"
+        help="If true, the feature will include inports needed in build.gradle file"/>
+    
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
