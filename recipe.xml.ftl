@@ -31,10 +31,15 @@
 <#-- ViewModel Class -->  
         <#if includeArq>
 
-        <instantiate from="src/app_package/view_model/ViewModel.kt.ftl"
+        <instantiate from="src/app_package/viewmodel/ViewModel.kt.ftl"
             to="${escapeXmlAttribute(srcOut)}/${featureName?lower_case}/viewmodel/${viewModelName}.kt" />
 
         </#if>
+
+<#-- Koin Class -->  
+
+        <instantiate from="src/app_package/koin/Koin.kt.ftl"
+            to="${escapeXmlAttribute(srcOut)}/${featureName?lower_case}/koin/${koinModuleName?cap_first}.kt" />
 
 <#-- Update Manifest -->
 

@@ -9,5 +9,6 @@
  <global id="viewModelName" value='${featureName?cap_first}ViewModel' />
  <global id="activityName" value='${featureName?cap_first}Activity' />
  <global id="fragmentName" value='${featureName?cap_first}Fragment' />
+  <global id="koinModuleName" value='${featureName?uncap_first}Module' />
  <global id="topOut" value="." />
 </globals>
