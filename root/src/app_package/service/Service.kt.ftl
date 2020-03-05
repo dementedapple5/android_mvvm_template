@@ -1,4 +1,4 @@
-package ${packageName}.${featureName?lower_case}.service
+package ${packageName}.${featureName?lower_case}.domain.service
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,11 +10,11 @@ const val apiUrl = ""
 
 interface ${serviceName} {
     //TODO: add services
-    @GET("todos/{id}/")
-    suspend fun getTodo(@Path(value = "id") id: Int): String
+    @GET("")
+    suspend fun ${methodNameOne}: Any
 
-    @GET("todos/")
-    suspend fun getTodos(): ArrayList<String>
+    @GET("")
+    suspend fun ${methodNameTwo}: Any
 }
 
 val ${serviceName?uncap_first}: ${serviceName} by lazy {

@@ -8,7 +8,9 @@
  <global id="serviceName" value='${featureName?cap_first}Service' />
  <global id="viewModelName" value='${featureName?cap_first}ViewModel' />
  <global id="activityName" value='${featureName?cap_first}Activity' />
+ <global id="methodNameOne" value='${useCaseNameOne?uncap_first}()' />
+ <global id="methodNameTwo" value='${useCaseNameTwo?uncap_first}()' />
  <global id="fragmentName" value='${featureName?cap_first}Fragment' />
-  <global id="koinModuleName" value='${featureName?uncap_first}Module' />
+ <global id="koinModuleName" value='${featureName?uncap_first}Module' />
  <global id="topOut" value="." />
 </globals>

@@ -1,5 +1,5 @@
 
-package ${packageName}.${featureName?lower_case}.view.activity
+package ${packageName}.${featureName?lower_case}.presentation.view.activity
 
 <#if includeArq>
 import ${packageName}.${featureName?lower_case}.viewmodel.${viewModelName}
@@ -15,15 +15,15 @@ class ${activityName} : AppCompatActivity() {
 
     <#if includeArq>
         private val ${viewModelName?uncap_first}: ${viewModelName} by viewModel()
-        private var currentTodo: String? = null
-        private var currentTodos: ArrayList<String>? = null
+        private var value1: Any? = null
+        private var value2: Any? = null
 
-        private val todoObserver = Observer<String> { todo ->
-            currentTodo = todo
+        private val ${useCaseNameOne?uncap_first}Observer = Observer<Any> { value ->
+            value1 = value
         }
 
-        private val todosObserver = Observer<ArrayList<String>> { todos ->
-            currentTodos = todos
+        private val ${useCaseNameTwo?uncap_first}Observer = Observer<Any> { value ->
+            value2 = value
         }
     </#if>
     
@@ -33,12 +33,12 @@ class ${activityName} : AppCompatActivity() {
         setContentView(R.layout.${activityToLayout(activityName)})
 
         <#if includeArq>
-        if (currentTodo == null) {
-            ${viewModelName?uncap_first}.todo.observe(this, todoObserver)
+        if (value1 == null) {
+            ${viewModelName?uncap_first}.value1.observe(this, ${useCaseNameOne?uncap_first}Observer)
         }
 
-        if (currentTodos == null) {
-            ${viewModelName?uncap_first}.todos.observe(this, todosObserver)
+        if (value2 == null) {
+            ${viewModelName?uncap_first}.value2.observe(this, ${useCaseNameTwo?uncap_first}Observer)
         }
         </#if>
     }

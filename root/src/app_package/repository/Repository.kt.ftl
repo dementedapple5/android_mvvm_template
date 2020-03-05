@@ -1,10 +1,8 @@
-package ${packageName}.${featureName?lower_case}.repository
-
-import ${packageName}.${featureName?lower_case}.service.${serviceName}
+package ${packageName}.${featureName?lower_case}.data.repository
  
-class ${repositoryName}(private val service: ${serviceName}) {
+interface ${repositoryName} {
     
-    suspend fun getTodo(id: Int) = service.getTodo(id)
+    suspend fun ${methodNameOne}: Any
 
-    suspend fun getTodos() = service.getTodos()
+    suspend fun ${methodNameTwo}: Any
 }

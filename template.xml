@@ -8,7 +8,7 @@
     <parameter id="featureName"
         name="Feature Name"
         type="string"
-        default="MitosisFeature"
+        default="CustomFeature"
         help="The name of the feature"/>
 
     <parameter id="includeActivity"
@@ -34,6 +34,18 @@
         type="boolean"
         default="true"
         help="If true, the feature will include a respository"/>
+
+    <parameter id="useCaseNameOne"
+        name="UseCase Name One"
+        type="string"
+        default="GetTodos"
+        help="The name of the First UseCase"/>
+
+    <parameter id="useCaseNameTwo"
+        name="UseCase Name Two"
+        type="string"
+        default="GetTodo"
+        help="The name of the Second UseCase"/>
 
     <parameter id="addImports"
         name="Add imports in Gradle"

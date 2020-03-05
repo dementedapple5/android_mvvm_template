@@ -1,6 +1,9 @@
-import ${packageName}.${featureName?lower_case}.repository.${repositoryName}
-import ${packageName}.${featureName?lower_case}.service.${serviceName}
-import ${packageName}.${featureName?lower_case}.viewmodel.${viewModelName}
+import ${packageName}.${featureName?lower_case}.domain.repository.${repositoryName}Impl
+import ${packageName}.${featureName?lower_case}.domain.service.${serviceName}
+import ${packageName}.${featureName?lower_case}.domain.usecase.${useCaseNameOne}
+import ${packageName}.${featureName?lower_case}.domain.usecase.${useCaseNameTwo}
+import ${packageName}.${featureName?lower_case}.domain.service.${serviceName}
+import ${packageName}.${featureName?lower_case}.presentation.viewmodel.${viewModelName}
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -11,9 +14,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 val ${koinModuleName} = module {
     factory { provideOkHttpClient() }
     factory { provide${serviceName}(get()) }
+    factory { ${useCaseNameOne}(get()) }
+    factory { ${useCaseNameTwo}(get()) }
     single { provideRetrofit(get()) }
-    viewModel { ${viewModelName}(get()) }
-    factory { ${repositoryName}(get()) }
+    viewModel { ${viewModelName}(get(), get()) }
+    factory { ${repositoryName}Impl(get()) }
 }
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
